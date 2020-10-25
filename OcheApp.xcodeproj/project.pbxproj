@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		861886CC2545C074008F0BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861886CB2545C074008F0BAC /* AppDelegate.swift */; };
 		861886CE2545C074008F0BAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861886CD2545C074008F0BAC /* SceneDelegate.swift */; };
-		861886D02545C074008F0BAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861886CF2545C074008F0BAC /* ViewController.swift */; };
 		861886D32545C074008F0BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861886D12545C074008F0BAC /* Main.storyboard */; };
 		861886D62545C074008F0BAC /* OcheApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 861886D42545C074008F0BAC /* OcheApp.xcdatamodeld */; };
 		861886D82545C075008F0BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861886D72545C075008F0BAC /* Assets.xcassets */; };
 		861886DB2545C075008F0BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861886D92545C075008F0BAC /* LaunchScreen.storyboard */; };
 		861886E62545C075008F0BAC /* OcheAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861886E52545C075008F0BAC /* OcheAppTests.swift */; };
 		861886F12545C075008F0BAC /* OcheAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861886F02545C075008F0BAC /* OcheAppUITests.swift */; };
+		861887022545C118008F0BAC /* TrilhasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861887012545C118008F0BAC /* TrilhasViewController.swift */; };
+		861887072545C124008F0BAC /* GaleriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861887062545C124008F0BAC /* GaleriaViewController.swift */; };
+		8618870C2545C130008F0BAC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618870B2545C130008F0BAC /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 		861886C82545C074008F0BAC /* OcheApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OcheApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		861886CB2545C074008F0BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		861886CD2545C074008F0BAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		861886CF2545C074008F0BAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		861886D22545C074008F0BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		861886D52545C074008F0BAC /* OcheApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OcheApp.xcdatamodel; sourceTree = "<group>"; };
 		861886D72545C075008F0BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		861886EC2545C075008F0BAC /* OcheAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OcheAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		861886F02545C075008F0BAC /* OcheAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcheAppUITests.swift; sourceTree = "<group>"; };
 		861886F22545C075008F0BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		861887012545C118008F0BAC /* TrilhasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrilhasViewController.swift; sourceTree = "<group>"; };
+		861887062545C124008F0BAC /* GaleriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaViewController.swift; sourceTree = "<group>"; };
+		8618870B2545C130008F0BAC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +107,14 @@
 			children = (
 				861886CB2545C074008F0BAC /* AppDelegate.swift */,
 				861886CD2545C074008F0BAC /* SceneDelegate.swift */,
-				861886CF2545C074008F0BAC /* ViewController.swift */,
 				861886D12545C074008F0BAC /* Main.storyboard */,
 				861886D72545C075008F0BAC /* Assets.xcassets */,
 				861886D92545C075008F0BAC /* LaunchScreen.storyboard */,
 				861886DC2545C075008F0BAC /* Info.plist */,
 				861886D42545C074008F0BAC /* OcheApp.xcdatamodeld */,
+				861887012545C118008F0BAC /* TrilhasViewController.swift */,
+				861887062545C124008F0BAC /* GaleriaViewController.swift */,
+				8618870B2545C130008F0BAC /* ChatViewController.swift */,
 			);
 			path = OcheApp;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				861886D62545C074008F0BAC /* OcheApp.xcdatamodeld in Sources */,
-				861886D02545C074008F0BAC /* ViewController.swift in Sources */,
+				861887022545C118008F0BAC /* TrilhasViewController.swift in Sources */,
+				861887072545C124008F0BAC /* GaleriaViewController.swift in Sources */,
+				8618870C2545C130008F0BAC /* ChatViewController.swift in Sources */,
 				861886CC2545C074008F0BAC /* AppDelegate.swift in Sources */,
 				861886CE2545C074008F0BAC /* SceneDelegate.swift in Sources */,
 			);

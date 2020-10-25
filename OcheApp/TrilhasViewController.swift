@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  TrilhasViewController.swift
 //  OcheApp
 //
 //  Created by Elaine  Cruz on 25/10/20.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class TrilhasViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +17,3 @@ class ViewController: UIViewController {
 
 
 }
-
