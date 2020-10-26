@@ -17,7 +17,11 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
     let locationManager:CLLocationManager = CLLocationManager()
     let notificationCenter = UNUserNotificationCenter.current()
     let aux = true
-    
+    @IBOutlet weak var PopUpBackground: UIImageView!
+    @IBOutlet weak var closePopUPButton: UIButton!
+    @IBOutlet weak var popUpSaveButton: UIButton!
+    @IBOutlet weak var popUpObra: UIImageView!
+    //var popUp = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,13 +47,13 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
         
         locationManager.distanceFilter = 100
         
-        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-8.056994, -34.908957), radius: 500, identifier: "MAB")
+        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-22.925798, -43.1745), radius: 500, identifier: "MF01")
         
         //let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(43.61871, -116.214607), radius: 100, identifier: "Boise")
 
         
         locationManager.startMonitoring(for: geoFenceRegion)
-        sendNotification(region: geoFenceRegion, identifier: "01.id")
+        sendNotification(region: geoFenceRegion, identifier: "MF01")
 
         
 //        locationManager.stopUpdatingLocation()
@@ -74,13 +78,20 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
        // postLocalNotifications(eventTitle: "Entered: \(region.identifier)")
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        appDelegate.scheduleNotification(notificationType: "Local Notification")
+//
+//        if(region.identifier == "MF01"){
+//            popUpObra = UIImageView(image: UIImage(named:"0072430cx069-6"))
+//        }
+
+        OpenPopUp()
         
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exited: \(region.identifier)")
        // postLocalNotifications(eventTitle: "Exited: \(region.identifier)")
-        sendNotification(region: region as! CLCircularRegion, identifier: "MAB")
+        sendNotification(region: region as! CLCircularRegion, identifier: region.identifier)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,16 +99,14 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
         // Dispose of any resources that can be recreated.
     }
 
-    func createGeofenceRegion(){
-        
-    }
+
     
     func sendNotification(region: CLCircularRegion,identifier: String  ) {
         // 1
         let content = UNMutableNotificationContent()
-        content.title = "OPA, uma obra!"
-        content.subtitle = "haaaaa"
-        content.body = "Entre no app e colete-a"
+        content.title = "Opa!"
+        content.subtitle = "Parece que você está perto de uma nova obra."
+        content.body = "Clique para saber mais."
         
         // 3
         let trigger = UNLocationNotificationTrigger(region: region, repeats:false)
@@ -136,5 +145,23 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
         completionHandler()
     }
     
+    func OpenPopUp(){
+        print("oppUPUP")
+        PopUpBackground.isHidden = false
+        closePopUPButton.isHidden = false
+        popUpSaveButton.isHidden = false
+        popUpObra.isHidden = false
+    }
+    
+    
+    @IBAction func ClosePopUp(_ sender: Any) {
+        PopUpBackground.isHidden = true
+        closePopUPButton.isHidden = true
+        popUpSaveButton.isHidden = true
+        popUpObra.isHidden = true
+    }
+    
+
+
 }
 
