@@ -50,6 +50,7 @@ struct GaleriaView: View {
             }
             .padding()
         }
+        .background(Color("Bege"))
         
     }
 }
