@@ -18,6 +18,7 @@
 		861887022545C118008F0BAC /* TrilhasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861887012545C118008F0BAC /* TrilhasViewController.swift */; };
 		861887072545C124008F0BAC /* GaleriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861887062545C124008F0BAC /* GaleriaViewController.swift */; };
 		8618870C2545C130008F0BAC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618870B2545C130008F0BAC /* ChatViewController.swift */; };
+		869D49D4256FF8DE004B1AC1 /* GaleriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D49D3256FF8DE004B1AC1 /* GaleriaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		861887012545C118008F0BAC /* TrilhasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrilhasViewController.swift; sourceTree = "<group>"; };
 		861887062545C124008F0BAC /* GaleriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaViewController.swift; sourceTree = "<group>"; };
 		8618870B2545C130008F0BAC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		869D49D3256FF8DE004B1AC1 /* GaleriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				861887012545C118008F0BAC /* TrilhasViewController.swift */,
 				861887062545C124008F0BAC /* GaleriaViewController.swift */,
 				8618870B2545C130008F0BAC /* ChatViewController.swift */,
+				869D49D3256FF8DE004B1AC1 /* GaleriaView.swift */,
 			);
 			path = OcheApp;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				861886D62545C074008F0BAC /* OcheApp.xcdatamodeld in Sources */,
+				869D49D4256FF8DE004B1AC1 /* GaleriaView.swift in Sources */,
 				861887022545C118008F0BAC /* TrilhasViewController.swift in Sources */,
 				861887072545C124008F0BAC /* GaleriaViewController.swift in Sources */,
 				8618870C2545C130008F0BAC /* ChatViewController.swift in Sources */,
