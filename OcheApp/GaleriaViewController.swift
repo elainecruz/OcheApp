@@ -11,23 +11,22 @@ import SwiftUI
 
 class GaleriaViewController: UIViewController {
 
-    let contentView = UIHostingController(rootView: GaleriaView())
+    var obras = [Obra]()
+    
+    //let contentView = UIHostingController(rootView: GaleriaView(obrasAchadas: obras))
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        let contentView = UIHostingController(rootView: GaleriaView(obrasAchadas: obras))
         addChild(contentView)
         view.addSubview(contentView.view)
-        setUpConstraints()
-        // Do any additional setup after loading the view.
-    }
-
-    func setUpConstraints(){
         contentView.view.translatesAutoresizingMaskIntoConstraints = false
         contentView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         contentView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         contentView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         contentView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
+
+       
 }
 

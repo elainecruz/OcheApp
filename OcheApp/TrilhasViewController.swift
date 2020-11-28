@@ -20,8 +20,36 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
     @IBOutlet weak var PopUpBackground: UIImageView!
     @IBOutlet weak var closePopUPButton: UIButton!
     @IBOutlet weak var popUpSaveButton: UIButton!
-    @IBOutlet weak var popUpObra: UIImageView!
+    @IBOutlet var popUpObra: UIImageView!
+    @IBOutlet weak var exclusivoBckgrnd: UIImageView!
+    @IBOutlet weak var btmNo: UIButton!
+    @IBOutlet weak var btmAdicionar: UIButton!
     //var popUp = UIView()
+    @IBOutlet weak var openExclusivo: UIButton!
+    
+    @IBOutlet weak var botaoAdd: UIButton!
+    @IBOutlet weak var btmAdd: UIButton!
+    var obras = [Obra]()
+    var adicionada = [false,false]
+    
+    @IBAction func openExclusivo(_ sender: Any) {
+       
+        print("OLHAAA")
+        
+        //btmAdd.isHidden = false
+        //print(btmAdd.isHidden)
+        btmNo.isHidden = false
+        botaoAdd.isHidden = false
+        exclusivoBckgrnd.isHidden = false
+    }
+
+    @IBAction func closeExclusivoPopUp(_ sender: Any) {
+        exclusivoBckgrnd.isHidden = true
+        botaoAdd.isHidden = true
+        btmNo.isHidden = true
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,12 +76,13 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
         locationManager.distanceFilter = 100
         
         let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-22.925798, -43.1745), radius: 500, identifier: "MF01")
-        
-        //let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(43.61871, -116.214607), radius: 100, identifier: "Boise")
-
+        let geoFenceRegion2:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake( -22.906928, -43.177865999999995), radius: 500, identifier: "MF02")
+    
         
         locationManager.startMonitoring(for: geoFenceRegion)
         sendNotification(region: geoFenceRegion, identifier: "MF01")
+        locationManager.startMonitoring(for: geoFenceRegion2)
+        sendNotification(region: geoFenceRegion, identifier: "MF02")
 
         
 //        locationManager.stopUpdatingLocation()
@@ -79,9 +108,18 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        appDelegate.scheduleNotification(notificationType: "Local Notification")
 //
-//        if(region.identifier == "MF01"){
-//            popUpObra = UIImageView(image: UIImage(named:"0072430cx069-6"))
-//        }
+    
+        if(region.identifier == "MF01" && !adicionada[0]){
+            //popUpObra = UIImageView(image: UIImage(named:"0072430cx069-6"))
+            obras.append(Obra(imagemPath: "0072430cx069-6", nome: "Jardim do Palácio do Catete - chafariz com escultura", artista: "Marc Ferrez", ano: " Aproximadamente 1885/1995", instituição: "Instituto Moreira Sales"))
+            adicionada[0] = true
+        }
+        
+        if(region.identifier == "MF02" && !adicionada[1]){
+            //popUpObra = UIImageView(image: UIImage(named:"0072430cx058-9"))
+            obras.append(Obra(imagemPath: "0072430cx058-9", nome: "Vista do Largo da Carioca com o convento de Santo Antônio ao fundo", artista: "Marc Ferrez", ano: " Aproximadamente 1885", instituição: "Instituto Moreira Sales"))
+            adicionada[1] = true
+        }
 
         OpenPopUp()
         
@@ -161,6 +199,14 @@ class TrilhasViewController: UIViewController, CLLocationManagerDelegate, UNUser
         popUpObra.isHidden = true
     }
     
+    
+    override func prepare (for segue: UIStoryboardSegue, sender:Any?) {
+        if segue.identifier == "galeriaSegue" {
+            let vcGaleria = segue.destination as? GaleriaViewController
+            vcGaleria?.obras = obras
+            print(obras)
+        }
+    }
 
 
 }

@@ -10,7 +10,11 @@
 import SwiftUI
 
 struct GaleriaView: View {
-    @State var obras = [Obra(imagemPath: "0072430cx069-6", nome: "Jardim do Palácio do Catete - chafariz com escultura", artista: "Marc Ferrez", ano: " Aproximadamente 1885/1995", instituição: "Instituto Moreira Sales")]
+    var obras = [Obra]()
+    
+    init(obrasAchadas: [Obra]){
+        obras = obrasAchadas
+    }
     
     var body: some View {
         VStack {
@@ -28,12 +32,12 @@ struct GaleriaView: View {
             
             ScrollView{
                 LazyVGrid(columns: [GridItem(), GridItem()], alignment: .center, spacing: 10){
-                    ForEach (0...999, id: \.self){ obra in
+                    ForEach (obras){ obra in
                         VStack (alignment:.center){
-                            Image(obras[0].imagemPath)
+                            Image(obra.imagemPath)
                                 .resizable()
                                 .frame(width: 120, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            Text(obras[0].nome)
+                            Text(obra.nome)
                                 .multilineTextAlignment(.center)
                                 .frame(width: 130)
                                 .font(.system(size: 15))
@@ -55,12 +59,12 @@ struct GaleriaView: View {
     }
 }
 
-struct GaleriaView_Previews: PreviewProvider {
-    static var previews: some View {
-        GaleriaView()
-            .previewDevice("iPhone 11")
-    }
-}
+//struct GaleriaView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GaleriaView(obrasAchadas: obras)
+//            .previewDevice("iPhone 11")
+//    }
+//}
 
 
 

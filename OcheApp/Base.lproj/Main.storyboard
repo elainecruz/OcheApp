@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z0X-dK-kFi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z0X-dK-kFi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="AfG-oo-LxJ" customClass="GaleriaViewController" customModule="OcheApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lee-lc-psu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circles" translatesAutoresizingMaskIntoConstraints="NO" id="8vD-zV-sdl">
@@ -30,6 +30,7 @@
                         <color key="backgroundColor" red="0.97254901960784312" green="0.94901960784313721" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Galeria" image="square.grid.2x2.fill" catalog="system" id="0hl-S6-IRY"/>
+                    <navigationItem key="navigationItem" id="6S7-Eg-11Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zb1-G6-edW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,6 +171,14 @@
                                     <segue destination="4M5-SV-6WU" kind="show" id="Ic8-Te-Kas"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNw-2t-jPf">
+                                <rect key="frame" x="44" y="377" width="356" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Group 166-2"/>
+                                <connections>
+                                    <action selector="openExclusivo:" destination="sIW-wW-M7R" eventType="touchUpInside" id="NWB-6p-6Yy"/>
+                                </connections>
+                            </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 152" translatesAutoresizingMaskIntoConstraints="NO" id="K5k-bL-2v2">
                                 <rect key="frame" x="0.0" y="284" width="400" height="394"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -186,11 +195,31 @@
                                 <rect key="frame" x="111" y="612" width="248" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Group 98"/>
+                                <connections>
+                                    <segue destination="AfG-oo-LxJ" kind="show" identifier="galeriaSegue" id="rnv-iD-VId"/>
+                                </connections>
                             </button>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0072430cx069-6" translatesAutoresizingMaskIntoConstraints="NO" id="Xr3-EB-wwb">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 136" translatesAutoresizingMaskIntoConstraints="NO" id="Xr3-EB-wwb">
                                 <rect key="frame" x="87" y="343" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 170" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-sF-ieR">
+                                <rect key="frame" x="22" y="284" width="360" height="394"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpG-gW-oGI">
+                                <rect key="frame" x="153" y="601" width="108" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Group 168"/>
+                                <connections>
+                                    <action selector="closeExclusivoPopUp:" destination="sIW-wW-M7R" eventType="touchUpInside" id="Xao-s2-Xx7"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FV8-gs-eOh">
+                                <rect key="frame" x="135" y="534" width="151" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Group 167"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpE-Ff-34l"/>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.94901960784313721" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
@@ -198,7 +227,10 @@
                     <tabBarItem key="tabBarItem" title="Trilhas" image="map.fill" catalog="system" id="Ecb-1C-2lL"/>
                     <connections>
                         <outlet property="PopUpBackground" destination="K5k-bL-2v2" id="rG9-r9-3j7"/>
+                        <outlet property="botaoAdd" destination="FV8-gs-eOh" id="Fx0-HX-Vay"/>
+                        <outlet property="btmNo" destination="KpG-gW-oGI" id="crq-a9-NWa"/>
                         <outlet property="closePopUPButton" destination="C2c-9B-7ZQ" id="7Po-g6-KcZ"/>
+                        <outlet property="exclusivoBckgrnd" destination="YaG-sF-ieR" id="3L5-iZ-fQn"/>
                         <outlet property="popUpObra" destination="Xr3-EB-wwb" id="QZ3-a8-sWB"/>
                         <outlet property="popUpSaveButton" destination="6Ob-mI-Ykd" id="ztf-hj-wyd"/>
                     </connections>
@@ -249,8 +281,11 @@
             <point key="canvasLocation" x="-941" y="400"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rnv-iD-VId"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="0072430cx069-6" width="1000" height="801"/>
+        <image name="Group 136" width="618" height="618"/>
         <image name="Group 137" width="176" height="252"/>
         <image name="Group 152" width="1292" height="1660"/>
         <image name="Group 154" width="356" height="106"/>
@@ -258,6 +293,10 @@
         <image name="Group 157-2" width="1184" height="504"/>
         <image name="Group 158" width="1064" height="220"/>
         <image name="Group 159" width="1184" height="504"/>
+        <image name="Group 166-2" width="1424" height="424"/>
+        <image name="Group 167" width="468" height="148"/>
+        <image name="Group 168" width="360" height="104"/>
+        <image name="Group 170" width="1340" height="1660"/>
         <image name="Group 98" width="1184" height="124"/>
         <image name="circles" width="375" height="52"/>
         <image name="galeriaTitle" width="628" height="308"/>
